@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TodoV2</string>
+    <string name="tasks">Tasks</string>
+    <string name="new_task">New task</string>
+    <string name="save">Save</string>
+    <string name="alert_title">New task</string>
+    <string name="alert_message">Enter the task below</string>
+</resources>
