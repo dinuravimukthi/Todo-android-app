@@ -1,5 +1,6 @@
 package com.example.todov2.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -19,7 +20,7 @@ interface TodoDao {
     suspend fun update(todo: Todo)
 
     @Query("SELECT * FROM Todo")
-    fun getAllTodoItems():List<Todo>
+    fun getAllTodoItems(): List<Todo>
 
     @Query("SELECT * FROM Todo WHERE id=:id")
     fun getOne(id:Int):Todo

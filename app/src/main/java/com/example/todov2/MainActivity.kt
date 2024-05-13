@@ -53,8 +53,7 @@ class MainActivity : AppCompatActivity() {
             // set the layout manager
             recyclerView!!.layoutManager = LinearLayoutManager(this)
 
-            val itemTouchHelper = ItemTouchHelper(RecyclerItemTouchHelper(adapter))
-            itemTouchHelper.attachToRecyclerView(recyclerView)
+
         }
 
         CoroutineScope(Dispatchers.IO).launch {
@@ -107,13 +106,14 @@ class MainActivity : AppCompatActivity() {
 //        deadlineEditText.hint = "Deadline"
 //        deadlineEditText.inputType = InputType.TYPE_CLASS_DATETIME
 //        layout.addView(deadlineEditText)
+
         // Create TextView and Button for deadline
         val deadlineTextView = TextView(this)
         deadlineTextView.hint = "Deadline"
         layout.addView(deadlineTextView)
 
         val deadlineButton = Button(this)
-        deadlineButton.text = "Select Deadline"
+        deadlineButton.text = getString(R.string.select_deadline)
         layout.addView(deadlineButton)
 
         val calendar = Calendar.getInstance()
