@@ -17,7 +17,7 @@
             android:id="@+id/todoCheckBox"
             android:layout_width="850px"
             android:layout_height="wrap_content"
-            android:buttonTint="@android:color/holo_green_dark"
+            android:buttonTint="@android:color/holo_blue_dark"
             android:paddingStart="8dp"
             tools:text="Go to the market and bring vegetables immediately today." />
 
