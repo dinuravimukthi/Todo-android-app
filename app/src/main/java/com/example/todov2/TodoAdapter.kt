@@ -1,6 +1,7 @@
 package com.example.todov2
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -53,5 +54,19 @@ class TodoAdapter(items:List<Todo>, repository:TodoRepository,
                 Toast.makeText(context, "Select the item to be deleted", Toast.LENGTH_LONG).show()
             }
         }
+    }
+
+    fun deleteItem(position: Int) {
+        CoroutineScope(Dispatchers.IO).launch {
+            repository.delete(items.get(position))
+            val data = repository.getAllTodoItems()
+            withContext(Dispatchers.Main){
+                viewModel.setData(data)
+            }
+        }
+    }
+
+    fun editItem(position: Int) {
+        Toast.makeText(context, "Edit button clicked", Toast.LENGTH_LONG).show()
     }
 }

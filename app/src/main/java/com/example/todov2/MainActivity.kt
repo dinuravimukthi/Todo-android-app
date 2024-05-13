@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todov2.database.Todo
@@ -51,6 +52,9 @@ class MainActivity : AppCompatActivity() {
             recyclerView!!.adapter = adapter
             // set the layout manager
             recyclerView!!.layoutManager = LinearLayoutManager(this)
+
+            val itemTouchHelper = ItemTouchHelper(RecyclerItemTouchHelper(adapter))
+            itemTouchHelper.attachToRecyclerView(recyclerView)
         }
 
         CoroutineScope(Dispatchers.IO).launch {
@@ -60,6 +64,9 @@ class MainActivity : AppCompatActivity() {
                 viewModel.setData(data)
             }
         }
+
+//        val itemTouchHelper = ItemTouchHelper(RecyclerItemTouchHelper(adapter))
+//        itemTouchHelper.attachToRecyclerView(recyclerView)
 
         fab = findViewById<FloatingActionButton>(R.id.fab)
 

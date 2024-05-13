@@ -5,4 +5,7 @@
     <string name="save">Save</string>
     <string name="alert_title">New task</string>
     <string name="alert_message">Enter the task below</string>
+    <string name="alert_edit_title">Edit task</string>
+    <string name="alert_edit_message">Edit the task below</string>
+    <string name="cancel">Cancel</string>
 </resources>
