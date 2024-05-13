@@ -134,9 +134,11 @@ class TodoAdapter(items:List<Todo>, repository:TodoRepository,
 
             // Update the task
             CoroutineScope(Dispatchers.IO).launch {
-                //todo.id, 
+                //todo.id,
                 val updatedTodo = Todo(newTitle, newDescription, newPriority, newDeadline)
+                updatedTodo.id = todo.id
                 repository.update(updatedTodo)
+
                 val data = repository.getAllTodoItems()
                 withContext(Dispatchers.Main){
                     viewModel.setData(data)
