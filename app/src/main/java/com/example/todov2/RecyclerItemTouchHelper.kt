@@ -51,7 +51,7 @@ class RecyclerItemTouchHelper(adapter: TodoAdapter) :
                 dialog.show()
             }
         } else {
-            adapter.editItem(position)
+            adapter.context?.let { adapter.editItem(it,position) }
         }
     }
 
